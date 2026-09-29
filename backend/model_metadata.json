@@ -1,0 +1,519 @@
+{
+  "model_name": "EstateVal HistGradientBoosting Ensemble",
+  "version": "2.0.0",
+  "target_transform": "log1p",
+  "metrics": {
+    "r2_score_price": 0.665,
+    "r2_score_log": 0.7358,
+    "cross_val_r2": 0.7248,
+    "mae_usd": 112970.25,
+    "rmse_usd": 201798.05,
+    "baseline_ridge_r2": -0.5211,
+    "baseline_ridge_mae": 123044.42,
+    "improvement_percent": 227.6
+  },
+  "top_feature_importances": {
+    "sqft_living": 0.4553,
+    "city_Seattle": 0.1138,
+    "city_Bellevue": 0.0514,
+    "sqft_above": 0.0491,
+    "city_Auburn": 0.0347,
+    "yr_built": 0.0309,
+    "living_lot_ratio": 0.0284,
+    "view": 0.0263,
+    "city_Federal Way": 0.0261,
+    "city_Kent": 0.0234,
+    "city_Mercer Island": 0.0216,
+    "sqft_per_bedroom": 0.0195,
+    "city_Kirkland": 0.0186,
+    "city_Redmond": 0.0156,
+    "sqft_lot": 0.0153
+  },
+  "features": {
+    "numeric": [
+      "bedrooms",
+      "sqft_living",
+      "sqft_lot",
+      "floors",
+      "view",
+      "condition",
+      "sqft_above",
+      "sqft_basement",
+      "yr_built",
+      "yr_renovated",
+      "house_age",
+      "is_renovated",
+      "has_basement",
+      "sqft_per_bedroom",
+      "living_lot_ratio"
+    ],
+    "cities": [
+      "Algona",
+      "Auburn",
+      "Beaux Arts Village",
+      "Bellevue",
+      "Black Diamond",
+      "Bothell",
+      "Burien",
+      "Carnation",
+      "Clyde Hill",
+      "Covington",
+      "Des Moines",
+      "Duvall",
+      "Enumclaw",
+      "Fall City",
+      "Federal Way",
+      "Inglewood-Finn Hill",
+      "Issaquah",
+      "Kenmore",
+      "Kent",
+      "Kirkland",
+      "Lake Forest Park",
+      "Maple Valley",
+      "Medina",
+      "Mercer Island",
+      "Milton",
+      "Newcastle",
+      "Normandy Park",
+      "North Bend",
+      "Pacific",
+      "Preston",
+      "Ravensdale",
+      "Redmond",
+      "Renton",
+      "Sammamish",
+      "SeaTac",
+      "Seattle",
+      "Shoreline",
+      "Skykomish",
+      "Snoqualmie",
+      "Snoqualmie Pass",
+      "Tukwila",
+      "Vashon",
+      "Woodinville",
+      "Yarrow Point"
+    ],
+    "all_columns": [
+      "bedrooms",
+      "sqft_living",
+      "sqft_lot",
+      "floors",
+      "view",
+      "condition",
+      "sqft_above",
+      "sqft_basement",
+      "yr_built",
+      "yr_renovated",
+      "house_age",
+      "is_renovated",
+      "has_basement",
+      "sqft_per_bedroom",
+      "living_lot_ratio",
+      "city_Algona",
+      "city_Auburn",
+      "city_Beaux Arts Village",
+      "city_Bellevue",
+      "city_Black Diamond",
+      "city_Bothell",
+      "city_Burien",
+      "city_Carnation",
+      "city_Clyde Hill",
+      "city_Covington",
+      "city_Des Moines",
+      "city_Duvall",
+      "city_Enumclaw",
+      "city_Fall City",
+      "city_Federal Way",
+      "city_Inglewood-Finn Hill",
+      "city_Issaquah",
+      "city_Kenmore",
+      "city_Kent",
+      "city_Kirkland",
+      "city_Lake Forest Park",
+      "city_Maple Valley",
+      "city_Medina",
+      "city_Mercer Island",
+      "city_Milton",
+      "city_Newcastle",
+      "city_Normandy Park",
+      "city_North Bend",
+      "city_Pacific",
+      "city_Preston",
+      "city_Ravensdale",
+      "city_Redmond",
+      "city_Renton",
+      "city_Sammamish",
+      "city_SeaTac",
+      "city_Seattle",
+      "city_Shoreline",
+      "city_Skykomish",
+      "city_Snoqualmie",
+      "city_Snoqualmie Pass",
+      "city_Tukwila",
+      "city_Vashon",
+      "city_Woodinville",
+      "city_Yarrow Point"
+    ]
+  },
+  "city_market_stats": {
+    "Algona": {
+      "median_price": 230000.0,
+      "mean_price": 207288.0,
+      "median_sqft_price": 125.92,
+      "count": 5,
+      "min_price": 100000.0,
+      "max_price": 262000.0
+    },
+    "Auburn": {
+      "median_price": 276000.0,
+      "mean_price": 301050.96,
+      "median_sqft_price": 144.33,
+      "count": 175,
+      "min_price": 87500.0,
+      "max_price": 900000.0
+    },
+    "Beaux Arts Village": {
+      "median_price": 745000.0,
+      "mean_price": 745000.0,
+      "median_sqft_price": 500.0,
+      "count": 1,
+      "min_price": 745000.0,
+      "max_price": 745000.0
+    },
+    "Bellevue": {
+      "median_price": 725000.0,
+      "mean_price": 862255.05,
+      "median_sqft_price": 300.0,
+      "count": 281,
+      "min_price": 248000.0,
+      "max_price": 7062500.0
+    },
+    "Black Diamond": {
+      "median_price": 326500.0,
+      "mean_price": 382056.25,
+      "median_sqft_price": 183.39,
+      "count": 8,
+      "min_price": 224000.0,
+      "max_price": 650000.0
+    },
+    "Bothell": {
+      "median_price": 458000.0,
+      "mean_price": 481441.89,
+      "median_sqft_price": 226.78,
+      "count": 33,
+      "min_price": 347000.0,
+      "max_price": 749995.0
+    },
+    "Burien": {
+      "median_price": 287475.0,
+      "mean_price": 358640.23,
+      "median_sqft_price": 183.06,
+      "count": 72,
+      "min_price": 100000.0,
+      "max_price": 1035000.0
+    },
+    "Carnation": {
+      "median_price": 432175.0,
+      "mean_price": 508751.95,
+      "median_sqft_price": 217.0,
+      "count": 22,
+      "min_price": 80000.0,
+      "max_price": 1680000.0
+    },
+    "Clyde Hill": {
+      "median_price": 1325000.0,
+      "mean_price": 1615711.11,
+      "median_sqft_price": 414.06,
+      "count": 9,
+      "min_price": 927000.0,
+      "max_price": 3800000.0
+    },
+    "Covington": {
+      "median_price": 249700.0,
+      "mean_price": 303283.5,
+      "median_sqft_price": 150.41,
+      "count": 42,
+      "min_price": 83300.0,
+      "max_price": 2199900.0
+    },
+    "Des Moines": {
+      "median_price": 256975.0,
+      "mean_price": 304992.55,
+      "median_sqft_price": 164.26,
+      "count": 58,
+      "min_price": 140000.0,
+      "max_price": 950000.0
+    },
+    "Duvall": {
+      "median_price": 402750.0,
+      "mean_price": 403994.13,
+      "median_sqft_price": 192.13,
+      "count": 42,
+      "min_price": 117833.33,
+      "max_price": 955000.0
+    },
+    "Enumclaw": {
+      "median_price": 289000.0,
+      "mean_price": 319007.72,
+      "median_sqft_price": 164.66,
+      "count": 27,
+      "min_price": 107500.0,
+      "max_price": 687000.0
+    },
+    "Fall City": {
+      "median_price": 563500.0,
+      "mean_price": 692681.82,
+      "median_sqft_price": 228.57,
+      "count": 11,
+      "min_price": 275000.0,
+      "max_price": 1600000.0
+    },
+    "Federal Way": {
+      "median_price": 264950.0,
+      "mean_price": 295885.38,
+      "median_sqft_price": 145.66,
+      "count": 145,
+      "min_price": 120750.0,
+      "max_price": 819000.0
+    },
+    "Inglewood-Finn Hill": {
+      "median_price": 425000.0,
+      "mean_price": 425000.0,
+      "median_sqft_price": 279.61,
+      "count": 1,
+      "min_price": 425000.0,
+      "max_price": 425000.0
+    },
+    "Issaquah": {
+      "median_price": 561000.0,
+      "mean_price": 599368.93,
+      "median_sqft_price": 258.08,
+      "count": 186,
+      "min_price": 195000.0,
+      "max_price": 2238888.0
+    },
+    "Kenmore": {
+      "median_price": 438000.0,
+      "mean_price": 454378.56,
+      "median_sqft_price": 218.38,
+      "count": 65,
+      "min_price": 238750.0,
+      "max_price": 1120000.0
+    },
+    "Kent": {
+      "median_price": 283200.0,
+      "mean_price": 298995.09,
+      "median_sqft_price": 151.06,
+      "count": 183,
+      "min_price": 100000.0,
+      "max_price": 651000.0
+    },
+    "Kirkland": {
+      "median_price": 522000.0,
+      "mean_price": 651583.59,
+      "median_sqft_price": 272.8,
+      "count": 187,
+      "min_price": 90000.0,
+      "max_price": 3000000.0
+    },
+    "Lake Forest Park": {
+      "median_price": 455000.0,
+      "mean_price": 474855.88,
+      "median_sqft_price": 215.39,
+      "count": 34,
+      "min_price": 260000.0,
+      "max_price": 790000.0
+    },
+    "Maple Valley": {
+      "median_price": 321000.0,
+      "mean_price": 340016.75,
+      "median_sqft_price": 166.41,
+      "count": 95,
+      "min_price": 108333.33,
+      "max_price": 725000.0
+    },
+    "Medina": {
+      "median_price": 2100000.0,
+      "mean_price": 2046559.09,
+      "median_sqft_price": 562.17,
+      "count": 11,
+      "min_price": 188000.0,
+      "max_price": 3710000.0
+    },
+    "Mercer Island": {
+      "median_price": 950466.67,
+      "mean_price": 1178637.99,
+      "median_sqft_price": 348.72,
+      "count": 82,
+      "min_price": 435000.0,
+      "max_price": 4668000.0
+    },
+    "Milton": {
+      "median_price": 285000.0,
+      "mean_price": 285000.0,
+      "median_sqft_price": 226.44,
+      "count": 2,
+      "min_price": 250000.0,
+      "max_price": 320000.0
+    },
+    "Newcastle": {
+      "median_price": 602500.0,
+      "mean_price": 666046.7,
+      "median_sqft_price": 255.74,
+      "count": 33,
+      "min_price": 339900.0,
+      "max_price": 1200000.0
+    },
+    "Normandy Park": {
+      "median_price": 455000.0,
+      "mean_price": 536604.41,
+      "median_sqft_price": 256.93,
+      "count": 17,
+      "min_price": 192000.0,
+      "max_price": 1309500.0
+    },
+    "North Bend": {
+      "median_price": 394250.0,
+      "mean_price": 399565.71,
+      "median_sqft_price": 197.83,
+      "count": 50,
+      "min_price": 240000.0,
+      "max_price": 845000.0
+    },
+    "Pacific": {
+      "median_price": 221200.0,
+      "mean_price": 225233.33,
+      "median_sqft_price": 168.6,
+      "count": 6,
+      "min_price": 174000.0,
+      "max_price": 260000.0
+    },
+    "Preston": {
+      "median_price": 562450.0,
+      "mean_price": 562450.0,
+      "median_sqft_price": 264.72,
+      "count": 2,
+      "min_price": 439900.0,
+      "max_price": 685000.0
+    },
+    "Ravensdale": {
+      "median_price": 499000.0,
+      "mean_price": 514071.43,
+      "median_sqft_price": 209.41,
+      "count": 7,
+      "min_price": 225000.0,
+      "max_price": 792500.0
+    },
+    "Redmond": {
+      "median_price": 636500.0,
+      "mean_price": 664965.78,
+      "median_sqft_price": 274.22,
+      "count": 234,
+      "min_price": 170000.0,
+      "max_price": 2280000.0
+    },
+    "Renton": {
+      "median_price": 345000.0,
+      "mean_price": 379632.31,
+      "median_sqft_price": 180.11,
+      "count": 291,
+      "min_price": 100000.0,
+      "max_price": 1135250.0
+    },
+    "Sammamish": {
+      "median_price": 668500.0,
+      "mean_price": 702985.83,
+      "median_sqft_price": 246.94,
+      "count": 171,
+      "min_price": 237333.33,
+      "max_price": 2400000.0
+    },
+    "SeaTac": {
+      "median_price": 238500.0,
+      "mean_price": 254051.0,
+      "median_sqft_price": 158.86,
+      "count": 28,
+      "min_price": 110700.0,
+      "max_price": 489000.0
+    },
+    "Seattle": {
+      "median_price": 490000.0,
+      "mean_price": 576068.21,
+      "median_sqft_price": 312.5,
+      "count": 1559,
+      "min_price": 90000.0,
+      "max_price": 3200000.0
+    },
+    "Shoreline": {
+      "median_price": 360000.0,
+      "mean_price": 420392.36,
+      "median_sqft_price": 233.58,
+      "count": 123,
+      "min_price": 176225.0,
+      "max_price": 2005000.0
+    },
+    "Skykomish": {
+      "median_price": 150000.0,
+      "mean_price": 233000.0,
+      "median_sqft_price": 159.62,
+      "count": 3,
+      "min_price": 134000.0,
+      "max_price": 415000.0
+    },
+    "Snoqualmie": {
+      "median_price": 536751.0,
+      "mean_price": 551850.38,
+      "median_sqft_price": 208.48,
+      "count": 69,
+      "min_price": 235000.0,
+      "max_price": 1149000.0
+    },
+    "Snoqualmie Pass": {
+      "median_price": 525000.0,
+      "mean_price": 525000.0,
+      "median_sqft_price": 250.0,
+      "count": 1,
+      "min_price": 525000.0,
+      "max_price": 525000.0
+    },
+    "Tukwila": {
+      "median_price": 263500.0,
+      "mean_price": 319021.86,
+      "median_sqft_price": 155.42,
+      "count": 28,
+      "min_price": 83000.0,
+      "max_price": 2110000.0
+    },
+    "Vashon": {
+      "median_price": 445000.0,
+      "mean_price": 472556.9,
+      "median_sqft_price": 245.54,
+      "count": 29,
+      "min_price": 160000.0,
+      "max_price": 849900.0
+    },
+    "Woodinville": {
+      "median_price": 562450.0,
+      "mean_price": 614912.08,
+      "median_sqft_price": 232.56,
+      "count": 114,
+      "min_price": 250000.0,
+      "max_price": 1820000.0
+    },
+    "Yarrow Point": {
+      "median_price": 1397000.0,
+      "mean_price": 1194837.5,
+      "median_sqft_price": 607.4,
+      "count": 4,
+      "min_price": 84350.0,
+      "max_price": 1901000.0
+    }
+  },
+  "dataset_summary": {
+    "total_sales_records": 4546,
+    "county": "King County, Washington (Seattle Metro)",
+    "overall_median_price": 465000.0,
+    "overall_mean_price": 549305.39,
+    "overall_median_sqft_price": 245.4
+  }
+}
