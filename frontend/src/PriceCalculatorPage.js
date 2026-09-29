@@ -107,6 +107,8 @@ const FALLBACK_PRESETS = [
   }
 ];
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 function PriceCalculatorPage() {
   const [activeTab, setActiveTab] = useState('calculator');
   const [loading, setLoading] = useState(false);
@@ -160,7 +162,7 @@ function PriceCalculatorPage() {
   useEffect(() => {
     const fetchMetaAndPresets = async () => {
       try {
-        const resPresets = await fetch('http://localhost:5000/api/v1/presets');
+        const resPresets = await fetch(`${API_BASE_URL}/api/v1/presets`);
         if (resPresets.ok) {
           const d = await resPresets.json();
           if (d.presets && d.presets.length > 0) setPresets(d.presets);
@@ -171,7 +173,7 @@ function PriceCalculatorPage() {
       }
 
       try {
-        const resMeta = await fetch('http://localhost:5000/api/v1/meta');
+        const resMeta = await fetch(`${API_BASE_URL}/api/v1/meta`);
         if (resMeta.ok) {
           const m = await resMeta.json();
           setMetadata(m);
@@ -215,7 +217,7 @@ function PriceCalculatorPage() {
 
     try {
       // Primary v1 endpoint
-      const response = await fetch('http://localhost:5000/api/v1/predict', {
+      const response = await fetch(`${API_BASE_URL}/api/v1/predict`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -229,7 +231,7 @@ function PriceCalculatorPage() {
         }
       } else {
         // Fallback to legacy endpoint
-        const legacyRes = await fetch('http://localhost:5000/predict', {
+        const legacyRes = await fetch(`${API_BASE_URL}/predict`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ data: payload })
